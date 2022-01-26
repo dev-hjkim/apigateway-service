@@ -25,6 +25,11 @@ spring:
           predicates:
             - Path=/user/**
           filters:
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Hi, there.
+                preLogger: true
+                postLogger: true
 #            - AddRequestHeader=user-request, user-request-header
 #            - AddResponseHeader=user-response, user-response-header
